@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import CreatePostDto from './dto/createPost.dto';
-import Post from './post.interface';
 import UpdatePostDto from './dto/updatePost.dto';
+import { Post } from './post.interface';
 
 @Injectable()
 export class PostsService {
@@ -30,6 +30,7 @@ export class PostsService {
   }
 
   createPost(post: CreatePostDto) {
+    console.log(post);
     const newPost = {
       id: ++this.lastPostId,
       ...post,
