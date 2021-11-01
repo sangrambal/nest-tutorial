@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PostsModule } from './posts/posts.module';
+import { DatabaseModule } from './database/database.module';
 import * as Joi from '@hapi/joi';
 
 @Module({
@@ -18,6 +19,7 @@ import * as Joi from '@hapi/joi';
         PORT: Joi.number(),
       }),
     }),
+    DatabaseModule,
   ],
   controllers: [AppController],
   providers: [AppService],
